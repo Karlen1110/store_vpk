@@ -27,6 +27,7 @@ const Product = sequelize.define("product", {
   price: { type: DataTypes.INTEGER, allowNull: false },
   picture_path: { type: DataTypes.STRING },
   desc: { type: DataTypes.STRING, allowNull: false },
+  type: { type: DataTypes.STRING, allowNull: false },
 });
 
 const MainStoreProduct = sequelize.define("mainProduct", {
