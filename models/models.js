@@ -55,8 +55,8 @@ Sale.belongsTo(Stock);
 User.hasMany(Stock);
 Stock.belongsTo(User);
 
-AddedProduct.hasOne(Stock);
-Stock.belongsTo(AddedProduct);
+Product.hasOne(Stock);
+Stock.belongsTo(Product);
 
 Product.hasOne(MainStoreProduct);
 MainStoreProduct.belongsTo(Product);

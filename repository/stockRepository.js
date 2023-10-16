@@ -1,4 +1,4 @@
-const { Stock } = require("../models/models");
+const { Stock, Product } = require("../models/models");
 
 const create = async (stockProduct) => {
   const product = await Stock.create(stockProduct);
@@ -6,7 +6,10 @@ const create = async (stockProduct) => {
 };
 
 const findAll = async (searchSettings) => {
-  const product = await Stock.findAll(searchSettings);
+  const product = await Stock.findAll({
+    where: searchSettings,
+    include: [Product],
+  });
   return product;
 };
 
