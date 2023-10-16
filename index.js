@@ -14,7 +14,7 @@ app.use(express.json());
 const start = async () => {
   try {
     await sequelize.authenticate();
-    await sequelize.sync();
+    await sequelize.sync({ alter: true });
 
     app.use("/api", purchaseRoute);
 
