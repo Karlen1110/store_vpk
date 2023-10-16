@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const sequelize = require("./db");
 const cors = require("cors");
-const PurchaseRoute = require("./routes/PurchaseRouter");
+const purchaseRoute = require("./routes/purchaseRouter");
 const errorHandler = require("./middleware/errorMiddleware");
 
 const PORT = process.env.PORT || 5000;
@@ -16,7 +16,7 @@ const start = async () => {
     await sequelize.authenticate();
     await sequelize.sync();
 
-    app.use("/api", PurchaseRoute);
+    app.use("/api", purchaseRoute);
 
     app.use(errorHandler);
 

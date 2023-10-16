@@ -1,12 +1,5 @@
 const { Sequelize } = require("sequelize");
 
 module.exports = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
-    dialect: "postgres",
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-  }
+  "postgres://maxim:Wj86sH0xiFkU7wZwwnjmFI4x6XAkHnF0@dpg-ckmk69ou1l6c739tvcs0-a.oregon-postgres.render.com/storesdb?ssl=true"
 );
