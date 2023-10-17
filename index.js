@@ -1,8 +1,9 @@
 // require("dotenv").config();
+//сервис
 const express = require("express");
 const sequelize = require("./db");
 const cors = require("cors");
-const purchaseRoute = require("./routes/purchaseRouter");
+const purchaseRoute = require("./routes/PurchaseRouter");
 const errorHandler = require("./middleware/errorMiddleware");
 
 const PORT = process.env.PORT || 5000;
