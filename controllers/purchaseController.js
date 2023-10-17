@@ -1,5 +1,5 @@
 const asyncHandler = require("express-async-handler");
-const stockRepository = require("../repository/temp2");
+const stockRepository = require("../repository/stockRepository");
 //111
 
 const purchaseProduct = asyncHandler(async (req, res) => {
