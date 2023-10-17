@@ -7,11 +7,14 @@ const purchaseProduct = asyncHandler(async (req, res) => {
   // добавление товаров
   if (!!products.length && products.length > 0) {
     products.forEach(async (el) => {
-      const foundProduct = await stockRepository.findOne({ name: el.name });
-      if (foundProduct) {
-        await foundProduct.update({
+      const foundProduct = await stockRepository.findOne({
+        where: { productId: el.productId },
+      });
+      if (foundProduct !== null) {
+        foundProduct.set({
           quantity: foundProduct.quantity + el.quantity,
         });
+        await foundProduct.save();
         return;
       }
       await stockRepository.create(el);
