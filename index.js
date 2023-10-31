@@ -3,7 +3,7 @@
 const express = require("express");
 const sequelize = require("./db");
 const cors = require("cors");
-const purchaseRoute = require("./routes/purchaseRouter");
+const routes = require("./routes");
 const errorHandler = require("./middleware/errorMiddleware");
 
 const PORT = process.env.PORT || 5000;
@@ -17,7 +17,7 @@ const start = async () => {
     await sequelize.authenticate();
     // await sequelize.sync();
 
-    app.use("/api", purchaseRoute);
+    app.use("/api", routes);
 
     app.use(errorHandler);
 
