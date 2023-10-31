@@ -1,7 +1,7 @@
 const { AddedProduct } = require("../models/models");
 
-const create = async (product) => {
-  const product = await AddedProduct.create(product);
+const create = async (newProduct) => {
+  const product = await AddedProduct.create(newProduct);
   return product;
 };
 
