@@ -8,8 +8,18 @@ const getProducts = asyncHandler(async (req, res) => {
   res.send(products);
 });
 
+const addProducts = asyncHandler(async (req, res) => {
+  const products = req.body;
+  if (!products) throw Error("Нет данных");
+  products.forEach(async (el) => {
+    await productRepository.create(el);
+  });
+  res.send(products);
+});
+
 const productController = {
   getProducts,
+  addProducts,
 };
 
 module.exports = productController;
